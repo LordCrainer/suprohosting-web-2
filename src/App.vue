@@ -7,7 +7,7 @@
 
 <script>
 //import Headerw from "./componentes/header.vue";
-import FooterW from "./components/footer.vue";
+import FooterW from "./componentes/footer.vue";
 //import Carusel from "./componentes/Inicio/carusel.vue";
 //import Hosting from "./componentes/hosting/hostings.vue";
 //import datePicker from "./componentes/date-picker.vue";

@@ -13,6 +13,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "latest",
     "vue": "^2.5.2",
     "vue-router": "latest",
     "vuetify": "latest"

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-scroll="onScroll">
     <v-navigation-drawer
       temporary
       hide-overlay
@@ -22,7 +22,13 @@
         <v-icon>exit_to_app</v-icon>
       </v-btn>
     </v-navigation-drawer>
-    <v-toolbar app fixed style="height:72px;">
+    <v-toolbar
+      app
+      fixed
+      :style="{ height: height_toolbar }"
+      class="elevation-8"
+      :class="color_toolbar"
+    >
       <v-hover>
         <v-avatar
           class="white"
@@ -30,7 +36,7 @@
           slot-scope="{
             hover
           }"
-          :size="`${hover ? 75 : 75}`"
+          :size="`${hover ? height_toolbar : height_toolbar}`"
         >
           <img
             src="https://uploads.codesandbox.io/uploads/user/17fffd86-3ee1-4ca9-abc0-4e76a2cb57f0/F0Jd-logo.png"
@@ -83,6 +89,9 @@ export default {
   },
   data() {
     return {
+      offsetTop: 0,
+      color_toolbar: "rgba(25, 25, 25, 0.10)",
+      height_toolbar: "70px",
       drawer_flag: false,
       color: "black",
       tab: null,
@@ -105,6 +114,18 @@ export default {
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     };
+  },
+  methods: {
+    onScroll(e) {
+      this.offsetTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (this.offsetTop > 30) {
+        this.color_toolbar = "rgba(255, 255, 255, 1)";
+        this.height_toolbar = "60px";
+      } else {
+        this.color_toolbar = "rgba(25, 25, 25,0.10)";
+        this.height_toolbar = "71px";
+      }
+    }
   }
 };
 </script>

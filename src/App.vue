@@ -1,12 +1,13 @@
 <template>
   <v-app>
+    <Headerw></Headerw>
     <router-view> </router-view>
     <FooterW></FooterW>
   </v-app>
 </template>
 
 <script>
-//import Headerw from "./componentes/header.vue";
+import Headerw from "./componentes/header.vue";
 import FooterW from "./componentes/footer.vue";
 //import Carusel from "./componentes/Inicio/carusel.vue";
 //import Hosting from "./componentes/hosting/hostings.vue";
@@ -14,7 +15,7 @@ import FooterW from "./componentes/footer.vue";
 //import subtab from "./componentes/subtab.vue";
 export default {
   components: {
-    //Headerw,
+    Headerw,
     FooterW
   }
 };

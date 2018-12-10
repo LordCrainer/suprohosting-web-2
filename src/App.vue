@@ -1,9 +1,15 @@
 <template>
-  <v-app>
+  <div style="background-color: white;">
     <Headerw></Headerw>
-    <router-view> </router-view>
+    <router-view name="carousel"></router-view>
+    <v-parallax
+      src="https://www.blockchaintechnology-news.com/wp-content/uploads/2018/11/iStock-944923496.jpg"
+      height="350"
+    >
+    </v-parallax>
+    <v-app> <router-view> </router-view> </v-app>
     <FooterW></FooterW>
-  </v-app>
+  </div>
 </template>
 
 <script>

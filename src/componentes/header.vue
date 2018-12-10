@@ -1,3 +1,10 @@
+<style scoped>
+div {
+  font-family: "Righteous", cursive;
+  font-size: 22px;
+}
+</style>
+
 <template>
   <div v-scroll="onScroll">
     <v-navigation-drawer
@@ -27,47 +34,31 @@
       fixed
       :style="{ height: height_toolbar }"
       class="elevation-8"
-      :class="color_toolbar"
+      :color="color_toolbar"
     >
       <v-hover>
         <v-avatar
-          class="white"
-          tile
+          color="rgba(255, 255, 255, 0.0)"
           slot-scope="{
             hover
           }"
           :size="`${hover ? height_toolbar : height_toolbar}`"
         >
-          <img
-            src="https://uploads.codesandbox.io/uploads/user/17fffd86-3ee1-4ca9-abc0-4e76a2cb57f0/F0Jd-logo.png"
-            alt="alt"
-          />
+          <img :src="src_logo" alt="alt" />
         </v-avatar>
       </v-hover>
       <v-spacer></v-spacer>
-      <v-toolbar-title class="black--text font-weight-bold">
+      <v-toolbar-title :class="color_text" class="font-weight-bold">
         SUPROHOSTING
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <Navbar :menus="menu_page" :path="rutas"></Navbar>
+        <Navbar :menus="menu_page" :path="rutas" :clases="color_text"></Navbar>
       </v-toolbar-items>
-
-      <!--
-        <v-menu bottom left class="hidden-md-and-up" offset-y fixed right app>
-          <v-btn flat fab color="grey" slot="activator">
-            <v-icon large>more_vert</v-icon>
-          </v-btn>
-          <List :items="menu_page" :path="rutas"></List>
-        </v-menu>
-      -->
-      <!--
-        <v-toolbar-side-icon  flat center class="hidden-md-and-up" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      -->
       <v-btn
         flat
         icon
-        color="grey"
+        :color="color_text.split('--')[0]"
         class="hidden-md-and-up"
         @click.stop="drawer_flag = !drawer_flag;"
       >
@@ -89,8 +80,11 @@ export default {
   },
   data() {
     return {
+      src_logo:
+        "https://uploads.codesandbox.io/uploads/user/17fffd86-3ee1-4ca9-abc0-4e76a2cb57f0/hagb-logo2.png",
       offsetTop: 0,
-      color_toolbar: "rgba(25, 25, 25, 0.10)",
+      color_toolbar: "rgba(255, 255, 255, 0.1)",
+      color_text: "white--text",
       height_toolbar: "70px",
       drawer_flag: false,
       color: "black",
@@ -119,11 +113,13 @@ export default {
     onScroll(e) {
       this.offsetTop = window.pageYOffset || document.documentElement.scrollTop;
       if (this.offsetTop > 30) {
-        this.color_toolbar = "rgba(255, 255, 255, 1)";
-        this.height_toolbar = "60px";
+        this.color_toolbar = "rgba(255, 255, 255, 0.9)";
+        this.height_toolbar = "65px";
+        this.color_text = "black--text";
       } else {
-        this.color_toolbar = "rgba(25, 25, 25,0.10)";
-        this.height_toolbar = "71px";
+        this.color_toolbar = "rgba(255, 255, 255, 0.1)";
+        this.height_toolbar = "68px";
+        this.color_text = "white--text";
       }
     }
   }

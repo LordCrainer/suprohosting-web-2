@@ -1,5 +1,5 @@
 <template lang="html">
-  <v-container fluid>
+  <v-container fluid app>
     <v-layout justify-center>
       <v-flex>
         <v-card>

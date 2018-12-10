@@ -1,5 +1,3 @@
-<style></style>
-
 <template>
   <v-carousel>
     <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
@@ -7,10 +5,8 @@
         <v-layout fill-height align-center justify-center>
           <v-flex sm8 md6 xs12 flexbox>
             <v-card color="rgba(102, 102, 102, 0.75)">
-              <v-card-text>
-                <span class="display-1 white--text text-md-center">{{
-                  item.text
-                }}</span>
+              <v-card-text class="text-sm-center">
+                <span class="display-1 white--text">{{ item.text }}</span>
               </v-card-text>
               <v-card-title primary-title> </v-card-title>
               <v-card-actions>

@@ -3,11 +3,15 @@ div {
   font-family: "Righteous", cursive;
   font-size: 22px;
 }
+#list {
+  background-color: rgba(255, 255, 255, 0.95);
+}
 </style>
 
 <template>
   <div v-scroll="onScroll">
     <v-navigation-drawer
+      id="list"
       temporary
       hide-overlay
       fixed

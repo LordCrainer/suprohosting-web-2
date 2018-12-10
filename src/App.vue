@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: rgba(25,25,25,0);">
+  <div style="background-color: rgba(25,25,25,0); min-width:250px;">
     <Headerw></Headerw>
     <router-view name="carousel"></router-view>
     <v-parallax
@@ -7,7 +7,7 @@
       height="350"
     >
     </v-parallax>
-    <v-app style="background-color: rgba(25,25,25,0);">
+    <v-app style="background-color: rgba(25,25,25,0.1); margin:0px;">
       <router-view> </router-view>
     </v-app>
     <FooterW></FooterW>

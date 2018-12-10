@@ -2,26 +2,26 @@
   <v-carousel>
     <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
       <v-container fill-height absolute>
-        <v-layout fill-height align-center justify-center>
-          <v-flex sm8 md6 xs12 flexbox>
+        <v-layout fill-height row align-center justify-center>
+          <v-flex md6 sm8 xs12>
             <v-card color="rgba(102, 102, 102, 0.75)">
               <v-card-text class="text-xs-center">
                 <span class="display-1 white--text">{{ item.text }}</span>
               </v-card-text>
-              <v-card-title primary-title> </v-card-title>
               <v-card-actions>
-                <v-layout fill-height align-end row justify-center>
-                  <v-flex xs12 flexbox>
-                    <v-btn round color="primary" dark>Hosting</v-btn>
-                  </v-flex>
-                  <v-flex xs12 flexbox>
-                    <v-btn round outline color="white " dark
-                      >Servicios Adicionales</v-btn
-                    >
-                  </v-flex>
-                </v-layout>
+                <v-container>
+                  <v-layout fill-height row align-center justify-center>
+                    <v-flex xs6>
+                      <v-btn round color="primary" dark>Hosting</v-btn>
+                    </v-flex>
+                    <v-flex xs6>
+                      <v-btn round outline color="white " dark
+                        >Servicios Adicionales
+                      </v-btn>
+                    </v-flex>
+                  </v-layout>
+                </v-container>
               </v-card-actions>
-              <div class="text-xs-center" v-if="item.text"></div>
             </v-card>
           </v-flex>
         </v-layout>

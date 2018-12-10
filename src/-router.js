@@ -5,7 +5,7 @@ import Router from "vue-router";
 
 import Header from "./componentes/header.vue";
 import Footer from "./componentes/footer.vue";*/
-import Inicio from "./componentes/Inicio/inicio.vue";
+import Pagina_Inicio from "./componentes/Inicio/inicio.vue";
 import Carousel from "./componentes/Inicio/carusel.vue";
 import Hosting from "./componentes/Hosting/hostings.vue";
 import Contact from "./componentes/Contact/contact.vue";
@@ -21,6 +21,7 @@ export default new Router({
       name: "home",
       path: "/",
       components: {
+        default: Pagina_Inicio,
         carousel: Carousel
       }
     },

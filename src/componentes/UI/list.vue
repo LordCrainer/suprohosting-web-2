@@ -1,14 +1,17 @@
 <style scoped>
 .border_hover:hover {
-  border-left: 7px solid black;
-  background-color: rgba(150, 150, 150, 0.2);
-  color: black;
+  border-left: 10px solid rgba(15, 15, 15, 1);
+  background-color: rgba(15, 15, 15, 0.7);
+  color: white;
   font-weight: bold;
+}
+.v-list {
+  background-color: rgba(255, 255, 255, 0);
 }
 </style>
 
 <template>
-  <v-list dense>
+  <v-list dense style="back">
     <v-list-tile
       class="border_hover"
       v-for="(menu, index) in items"

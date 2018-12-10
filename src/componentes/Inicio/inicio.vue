@@ -1,11 +1,11 @@
 <template>
-  <Carousel> </Carousel>
+  <Valores> </Valores>
 </template>
 <script>
-import Carousel from "./carusel.vue";
+import Valores from "./valores.vue";
 export default {
   components: {
-    Carousel
+    Valores
   }
 };
 </script>

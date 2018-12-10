@@ -17,14 +17,13 @@
                 <v-container>
                   <v-layout align-center justify-center row fill-height>
                     <v-card
-                      height="260"
-                      width="260"
+                      height="270"
+                      width="270"
                       style="min-width:250px; border-radius: 10%"
-                      class="white--text"
-                      color="rgba(75,75,75,0.5)"
-                      elevation-0
+                      class="black--text"
+                      color="rgba(255,255,255,0.9)"
+                      hover
                     >
-                      <v-card-text> {{ valor.titulo }} </v-card-text>
                       <v-hover>
                         <v-avatar
                           slot-scope="{
@@ -36,8 +35,14 @@
                           <img :src="valor.src_avatar" alt="avatar" />
                         </v-avatar>
                       </v-hover>
+                      <v-card-text class="title">
+                        {{ valor.titulo }}
+                      </v-card-text>
 
-                      <v-card-title> {{ valor.text }} </v-card-title>
+                      <v-divider></v-divider>
+                      <v-card-title class="subheading">
+                        {{ valor.text }}
+                      </v-card-title>
                     </v-card>
                   </v-layout>
                 </v-container>
@@ -66,7 +71,7 @@ export default {
           text:
             "Crea tus propias cuentas de correo usando tu dominio de manera sumamente sencilla",
           src_avatar:
-            "https://errorlogz.com/wp-content/uploads/2016/05/global.logo_.png"
+            "http://wanted.espaciores.org/wp-content/uploads/2015/11/icono-email.png"
         },
         {
           titulo: "Cuentas de correo Coorporativo",
@@ -90,11 +95,10 @@ export default {
             "https://errorlogz.com/wp-content/uploads/2016/05/global.logo_.png"
         },
         {
-          titulo: "Cuentas de correo Coorporativo",
+          titulo: "Servicio 24/7",
           text:
             "Crea tus propias cuentas de correo usando tu dominio de manera sumamente sencilla",
-          src_avatar:
-            "https://errorlogz.com/wp-content/uploads/2016/05/global.logo_.png"
+          src_avatar: "https://image.flaticon.com/icons/png/512/45/45765.png"
         }
       ]
     };

@@ -34,9 +34,11 @@ body {
   color: #fff;
   background: #949c4e;
   background: linear-gradient(
-    115deg,
-    rgba(15, 150, 200, 1) 10%,
-    rgba(15, 1, 175, 1) 90%
+    135deg,
+    rgba(0, 25, 100, 1) 25%,
+    rgba(75, 150, 225, 1) 25%,
+    rgba(75, 150, 225, 1) 60%,
+    rgba(0, 25, 100, 1) 60%
   );
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,

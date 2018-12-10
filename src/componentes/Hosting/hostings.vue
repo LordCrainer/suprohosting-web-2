@@ -8,7 +8,7 @@
     font-weight: bold;
     width: 100%;
     left: 0;
-    top: 10%;
+    top: 0%;
     background-color: rgba(75, 138, 244, 0.75);
     text-align: center;
 }
@@ -16,9 +16,9 @@
 
 <template lang="html">
   <div>
-    <hostingPlanes :parametros="parametros" :cards="datos"></hostingPlanes>
+    <hostingPlanes :parametros="parametros" :datos="datos"></hostingPlanes>
 
-    <tablaContenido :parametros="parametros" :cards="datos"></tablaContenido>
+    <tablaContenido :parametros="parametros" :datos="datos"></tablaContenido>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 {
   "name": "suprohosting-web-210",
   "version": "1.0.0",
-  "description": "",
+  "description": "Pagina para el negocio de reseller",
   "main": "src/main.js",
   "private": true,
   "scripts": {

@@ -1,19 +1,3 @@
-<style lang="css">
-
-.box_pad {
-    position: absolute;
-    align-content: center;
-    padding: 10px;
-    align-items: center;
-    font-weight: bold;
-    width: 100%;
-    left: 0;
-    top: 0%;
-    background-color: rgba(75, 138, 244, 0.75);
-    text-align: center;
-}
-</style>
-
 <template lang="html">
   <div>
     <hostingPlanes :parametros="parametros" :datos="datos"></hostingPlanes>

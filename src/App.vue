@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: white;">
+  <div style="background-color: rgba(25,25,25,0);">
     <Headerw></Headerw>
     <router-view name="carousel"></router-view>
     <v-parallax
@@ -7,7 +7,9 @@
       height="350"
     >
     </v-parallax>
-    <v-app> <router-view> </router-view> </v-app>
+    <v-app style="background-color: rgba(25,25,25,0);">
+      <router-view> </router-view>
+    </v-app>
     <FooterW></FooterW>
   </div>
 </template>
@@ -28,6 +30,20 @@ export default {
 </script>
 
 <style>
+body {
+  color: #fff;
+  background: #949c4e;
+  background: linear-gradient(
+    115deg,
+    rgba(15, 150, 200, 1) 10%,
+    rgba(15, 1, 175, 1) 90%
+  );
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

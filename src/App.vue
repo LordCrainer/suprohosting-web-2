@@ -5,7 +5,9 @@
       :rutas="rutas"
       @epath="nombreRuta($event);"
     ></Headerw>
+    <!-- Solo se renderiza el archivo que tiene dicho nombre -->
     <router-view name="carousel"></router-view>
+    <!-- Efecto que se agrega en cada ruta -->
     <v-parallax
       src="https://www.blockchaintechnology-news.com/wp-content/uploads/2018/11/iStock-944923496.jpg"
       height="350"
@@ -16,6 +18,7 @@
         </div>
       </v-layout>
     </v-parallax>
+    <!-- Se encuentra la sección donde estarán las demás páginas -->
     <v-app style="background-color: rgba(25,25,25,0.1); margin:0px;">
       <router-view> </router-view>
     </v-app>

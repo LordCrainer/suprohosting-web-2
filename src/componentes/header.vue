@@ -20,7 +20,7 @@ div {
       right
       app
     >
-      <List :items="menu_page" :path="rutas"></List>
+      <List :items="menu" :path="rutas" @epath="nombreRuta($event);"></List>
       <v-btn
         fixed
         bottom
@@ -57,7 +57,12 @@ div {
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <Navbar :menus="menu_page" :path="rutas" :clases="color_text"></Navbar>
+        <Navbar
+          @epath="nombreRuta($event);"
+          :menus="menu"
+          :path="rutas"
+          :clases="color_text"
+        ></Navbar>
       </v-toolbar-items>
       <v-btn
         flat
@@ -78,6 +83,7 @@ import List from "./UI/list.vue";
 //import pdfvue from "./inicio/pdf.vue";
 //import PDF from "jspdf";
 export default {
+  props: ["menu", "rutas"],
   components: {
     Navbar,
     List
@@ -93,22 +99,7 @@ export default {
       drawer_flag: false,
       color: "black",
       tab: null,
-      rutas: [
-        "/",
-        "clientes",
-        "/hosting",
-        "/dominio",
-        "/nosotros",
-        "/contacto"
-      ],
-      menu_page: [
-        "PRINCIPAL",
-        "CLIENTES",
-        "HOSTING",
-        "DOMINIO",
-        "NOSOTROS",
-        "CONTACTO"
-      ],
+
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     };
@@ -125,6 +116,9 @@ export default {
         this.height_toolbar = "68px";
         this.color_text = "white--text";
       }
+    },
+    nombreRuta(ruta) {
+      this.$emit("epath", ruta);
     }
   }
 };

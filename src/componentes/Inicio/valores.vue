@@ -45,13 +45,14 @@
                   >
                     <v-hover>
                       <v-avatar
+                        transition="slide-y-reverse-transition"
                         slot-scope="{
                           hover
                         }"
                         :class="`elevation-${hover ? 10 : 2}`"
                         size="100"
                       >
-                        <img :src="valor.src_avatar" alt="avatar" />
+                        <img :src="valor.src_avatar" alt="avatar" @click="" />
                       </v-avatar>
                     </v-hover>
                     <v-card-text class="title">

@@ -16,7 +16,7 @@
       class="border_hover"
       v-for="(menu, index) in items"
       :key="index"
-      @click=""
+      @click="nombreRuta(path[index]);"
       :to="path[index]"
       ripple
     >
@@ -31,7 +31,13 @@ export default {
   data() {
     return {
       tab: null
+      //:to="path[index]"
     };
+  },
+  methods: {
+    nombreRuta(ruta) {
+      this.$emit("epath", ruta);
+    }
   }
 };
 </script>

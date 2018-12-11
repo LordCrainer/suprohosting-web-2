@@ -1,5 +1,6 @@
 <template lang="html">
   <div>
+    <slot></slot>
     <hostingPlanes :parametros="parametros" :datos="datos"></hostingPlanes>
 
     <tablaContenido :parametros="parametros" :datos="datos"></tablaContenido>
@@ -14,6 +15,7 @@ export default {
     hostingPlanes,
     tablaContenido
   },
+  beforeCreated() {},
   data() {
     return {
       parametros: [

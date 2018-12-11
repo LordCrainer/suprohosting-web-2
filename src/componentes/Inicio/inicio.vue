@@ -1,5 +1,6 @@
 <template>
   <div>
+    <slot></slot>
     <hostingPlanes
       :parametros="dato.parametros"
       :datos="dato.datos"

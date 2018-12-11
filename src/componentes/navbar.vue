@@ -4,6 +4,7 @@
     <v-tab
       v-for="(menu, ind_menu) in menus"
       :key="menu"
+      @click="nombreRuta(path[ind_menu]);"
       :to="path[ind_menu]"
       class="font-weight-bold body-2"
       :class="clases"
@@ -20,6 +21,12 @@ export default {
     return {
       tab: null
     };
+  },
+  methods: {
+    nombreRuta(ruta) {
+      this.$emit("epath", ruta);
+      return ruta;
+    }
   }
 };
 </script>

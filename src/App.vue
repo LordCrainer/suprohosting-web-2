@@ -1,11 +1,20 @@
 <template>
   <div style="background-color: rgba(25,25,25,0); min-width:250px;">
-    <Headerw></Headerw>
+    <Headerw
+      :menu="menu_page"
+      :rutas="rutas"
+      @epath="nombreRuta($event);"
+    ></Headerw>
     <router-view name="carousel"></router-view>
     <v-parallax
       src="https://www.blockchaintechnology-news.com/wp-content/uploads/2018/11/iStock-944923496.jpg"
       height="350"
     >
+      <v-layout align-center justify-center>
+        <div>
+          <h1 v-if="rutaActual != '/'">{{ rutaActual }}</h1>
+        </div>
+      </v-layout>
     </v-parallax>
     <v-app style="background-color: rgba(25,25,25,0.1); margin:0px;">
       <router-view> </router-view>
@@ -25,11 +34,37 @@ export default {
   components: {
     Headerw,
     FooterW
+  },
+  data() {
+    return {
+      rutas: ["/", "clientes", "hosting", "dominio", "nosotros", "contacto"],
+      menu_page: [
+        "PRINCIPAL",
+        "CLIENTES",
+        "HOSTING",
+        "DOMINIO",
+        "NOSOTROS",
+        "CONTACTO"
+      ],
+      rutaActual: ""
+    };
+  },
+  created() {
+    this.getPath();
+  },
+  methods: {
+    getPath() {
+      this.rutaActual = this.$route.name.toUpperCase();
+    },
+    nombreRuta(ruta) {
+      this.rutaActual = ruta.toUpperCase();
+    }
   }
 };
 </script>
 
 <style>
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css";
 body {
   color: #fff;
   background: #949c4e;
@@ -55,7 +90,7 @@ body {
   margin-top: 60px;
 }
 
-h1,
+/*h1,
 h2 {
   font-weight: normal;
 }
@@ -72,5 +107,9 @@ li {
 
 a {
   color: #42b983;
+}*/
+.page {
+  position: fixed;
+  width: inherit;
 }
 </style>

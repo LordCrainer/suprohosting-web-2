@@ -1,14 +1,11 @@
 <template>
   <v-parallax
-    src="http://thetanjungpuratimes.com/file/2016/02/Symphony-Square-Abstract-Background-Vector.jpg"
+    src="https://www.blockchaintechnology-news.com/wp-content/uploads/2018/11/iStock-944923496.jpg"
     height="350"
   >
     <v-layout align-center justify-center>
       <div>
-        <h1
-          v-if="item != 'INICIO' && item != '/'"
-          style="font-size: 50px; color: black;"
-        >
+        <h1 v-if="item != 'HOME' && item != '/'" style="font-size: 50px;">
           {{ item }}
         </h1>
       </div>

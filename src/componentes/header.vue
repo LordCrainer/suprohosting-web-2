@@ -40,17 +40,20 @@ div {
       class="elevation-8"
       :color="color_toolbar"
     >
-      <v-toolbar-side-icon fab flat dark :ripple="false">
-        <v-avatar color="transparent" size="55">
-          <img :src="src_logo" alt="alt" /> </v-avatar
-      ></v-toolbar-side-icon>
+      <v-hover>
+        <v-avatar
+          color="rgba(255, 255, 255, 0.0)"
+          slot-scope="{
+            hover
+          }"
+          :size="`${hover ? height_toolbar : height_toolbar}`"
+        >
+          <img :src="src_logo" alt="alt" />
+        </v-avatar>
+      </v-hover>
       <v-spacer></v-spacer>
-      <v-toolbar-title
-        :class="color_text"
-        class="font-weight-black"
-        style="font-size: 26px;"
-      >
-        ADCAPLUS
+      <v-toolbar-title :class="color_text" class="font-weight-bold">
+        SUPROHOSTING-W
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -88,9 +91,9 @@ export default {
   data() {
     return {
       src_logo:
-        "https://uploads.codesandbox.io/uploads/user/17fffd86-3ee1-4ca9-abc0-4e76a2cb57f0/3C31-logo3.png",
+        "https://uploads.codesandbox.io/uploads/user/17fffd86-3ee1-4ca9-abc0-4e76a2cb57f0/hagb-logo2.png",
       offsetTop: 0,
-      color_toolbar: "rgba(50, 50, 50, 0.8)",
+      color_toolbar: "rgba(255, 255, 255, 0.1)",
       color_text: "white--text",
       height_toolbar: "70px",
       drawer_flag: false,
@@ -109,7 +112,7 @@ export default {
         this.height_toolbar = "65px";
         this.color_text = "black--text";
       } else {
-        this.color_toolbar = "rgba(50, 50, 50, 0.8)";
+        this.color_toolbar = "rgba(255, 255, 255, 0.1)";
         this.height_toolbar = "68px";
         this.color_text = "white--text";
       }

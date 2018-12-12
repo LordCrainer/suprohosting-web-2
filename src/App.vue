@@ -35,8 +35,22 @@ export default {
   },
   data() {
     return {
-      rutas: ["/", "/cursos", "/blog", "/nosotros", "/contacto"],
-      menu_page: ["PRINCIPAL", "CURSOS", "BLOG", "NOSOTROS", "CONTACTO"],
+      rutas: [
+        "/",
+        "/clientes",
+        "/hosting",
+        "/dominio",
+        "/hosting/hosting_starter",
+        "/contacto"
+      ],
+      menu_page: [
+        "PRINCIPAL",
+        "CLIENTES",
+        "HOSTING",
+        "DOMINIO",
+        "NOSOTROS",
+        "CONTACTO"
+      ],
       rutaActual: "",
       rutaInicio: [
         {

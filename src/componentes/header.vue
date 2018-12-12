@@ -53,7 +53,7 @@ div {
       </v-hover>
       <v-spacer></v-spacer>
       <v-toolbar-title :class="color_text" class="font-weight-bold">
-        SUPROHOSTING-W
+        SUPROHOSTING
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">

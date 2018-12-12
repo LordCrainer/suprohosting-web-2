@@ -5,7 +5,7 @@
   >
     <v-layout align-center justify-center>
       <div>
-        <h1 v-if="item != 'HOME' && item != '/'" style="font-size: 50px;">
+        <h1 v-if="item != 'INICIO' && item != '/'" style="font-size: 50px;">
           {{ item }}
         </h1>
       </div>

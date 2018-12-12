@@ -29,33 +29,16 @@ export default new Router({
       }
     },
     {
-      name: "HOSTING",
-      path: "/hosting",
+      name: "CURSOS",
+      path: "/cursos",
       components: { default: Hosting }
-    },
-    {
-      name: "HOSTING STARTER",
-      path: "/hosting/hosting_starter",
-      component: Parallax
-    },
-    {
-      name: "HOSTING ENTERPRISE",
-      path: "/hosting/hosting_enterprise",
-      component: Parallax
     },
     {
       name: "CONTACTO",
       path: "/contacto",
       components: {
         default: Contact
-      },
-      children: [
-        {
-          name: "STARTER",
-          path: "1234",
-          component: Contact
-        }
-      ]
+      }
     },
     {
       name: "ERROR404",

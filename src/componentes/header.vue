@@ -40,20 +40,24 @@ div {
       class="elevation-8"
       :color="color_toolbar"
     >
-      <v-hover>
-        <v-avatar
-          color="rgba(255, 255, 255, 0.0)"
-          slot-scope="{
-            hover
-          }"
-          :size="`${hover ? height_toolbar : height_toolbar}`"
-        >
-          <img :src="src_logo" alt="alt" />
-        </v-avatar>
-      </v-hover>
+      <!--
+        <v-hover>
+          <v-avatar
+            color="blue"
+            slot-scope="{
+              hover
+            }"
+            :size="`${hover ? height_toolbar : height_toolbar}`"
+          >
+            <img :src="src_logo" alt="alt" />
+          </v-avatar>
+        </v-hover>
+      -->
+      <v-toolbar-side-icon></v-toolbar-side-icon>
+      <v-toolbar-side-icon> probando</v-toolbar-side-icon>
       <v-spacer></v-spacer>
       <v-toolbar-title :class="color_text" class="font-weight-bold">
-        SUPROHOSTING
+        ADCAPLUS
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -91,7 +95,7 @@ export default {
   data() {
     return {
       src_logo:
-        "https://uploads.codesandbox.io/uploads/user/17fffd86-3ee1-4ca9-abc0-4e76a2cb57f0/hagb-logo2.png",
+        "https://uploads.codesandbox.io/uploads/user/17fffd86-3ee1-4ca9-abc0-4e76a2cb57f0/bfXA-ADC%20A+.2-06.png",
       offsetTop: 0,
       color_toolbar: "rgba(255, 255, 255, 0.1)",
       color_text: "white--text",

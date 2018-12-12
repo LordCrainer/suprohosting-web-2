@@ -1,7 +1,7 @@
 {
   "name": "suprohosting",
   "version": "1.0.0",
-  "description": "Pagina para el negocio de reseller, fork1, team",
+  "description": "Página para el negocio de reseller -team",
   "main": "src/main.js",
   "private": true,
   "scripts": {

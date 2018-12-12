@@ -1,6 +1,6 @@
 <style scoped>
 div {
-  font-family: "Righteous", cursive;
+  //font-family: "Righteous", cursive;
   font-size: 22px;
 }
 #list {

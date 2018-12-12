@@ -1,26 +1,19 @@
 <template>
   <div style="background-color: rgba(25,25,25,0); min-width:250px;">
-    <Headerw
-      :menu="menu_page"
-      :rutas="rutas"
-      @epath="nombreRuta($event);"
-    ></Headerw>
+    <!-- HEADER -->
+    <!--
+      Tiene 2 parámetros y 1 función que recoge el dato que emitió un hijo
+    -->
+    <Headerw :menu="menu_page" :rutas="rutas"></Headerw>
+    <!-- Carousel -->
     <!-- Solo se renderiza el archivo que tiene dicho nombre -->
     <router-view name="carousel"></router-view>
+    <!-- Solo se renderiza el archivo que tiene dicho nombre -->
     <!-- Efecto que se agrega en cada ruta -->
-    <v-parallax
-      src="https://www.blockchaintechnology-news.com/wp-content/uploads/2018/11/iStock-944923496.jpg"
-      height="350"
-    >
-      <v-layout align-center justify-center>
-        <div>
-          <h1 v-if="rutaActual != '/'">{{ rutaActual }}</h1>
-        </div>
-      </v-layout>
-    </v-parallax>
+    <Parallax :item="rutaActual"></Parallax>
     <!-- Se encuentra la sección donde estarán las demás páginas -->
-    <v-app style="background-color: rgba(25,25,25,0.1); margin:0px;">
-      <router-view> </router-view>
+    <v-app style="background-color: transparent; margin:0px;">
+      <router-view @epath="nombreRuta($event);"></router-view>
     </v-app>
     <FooterW></FooterW>
   </div>
@@ -29,6 +22,7 @@
 <script>
 import Headerw from "./componentes/header.vue";
 import FooterW from "./componentes/footer.vue";
+import Parallax from "./componentes/UI/parallax.vue";
 //import Carusel from "./componentes/Inicio/carusel.vue";
 //import Hosting from "./componentes/hosting/hostings.vue";
 //import datePicker from "./componentes/date-picker.vue";
@@ -36,11 +30,19 @@ import FooterW from "./componentes/footer.vue";
 export default {
   components: {
     Headerw,
-    FooterW
+    FooterW,
+    Parallax
   },
   data() {
     return {
-      rutas: ["/", "clientes", "hosting", "dominio", "nosotros", "contacto"],
+      rutas: [
+        "/",
+        "/clientes",
+        "/hosting",
+        "/dominio",
+        "/hosting/hosting_starter",
+        "/contacto"
+      ],
       menu_page: [
         "PRINCIPAL",
         "CLIENTES",
@@ -49,18 +51,60 @@ export default {
         "NOSOTROS",
         "CONTACTO"
       ],
-      rutaActual: ""
+      rutaActual: "",
+      rutaInicio: [
+        {
+          ruta: "/",
+          nombre: "Principal"
+        },
+        {
+          ruta: "/clientes",
+          nombre: "CLIENTES"
+        },
+        {
+          ruta: "/clientes",
+          nombre: "HOSTING",
+          children: [
+            {
+              ruta: "/hosting_starter",
+              nombre: "HOSTING STARTER"
+            },
+            {
+              ruta: "/hosting_enterprise",
+              nombre: "HOSTING ENTERPRISE"
+            }
+          ]
+        },
+        {
+          ruta: "/dominio",
+          nombre: "DOMINIO"
+        },
+        {
+          ruta: "/nosotros",
+          nombre: "NOSOTROS"
+        },
+        {
+          ruta: "/contacto",
+          nombre: "CONTACTO"
+        }
+      ]
     };
   },
   created() {
     this.getPath();
   },
+  watch: {
+    $route() {
+      this.rutaActual = this.$route.name;
+      //.path.toUpperCase().split("/")[1]
+    }
+  },
   methods: {
     getPath() {
-      this.rutaActual = this.$route.name.toUpperCase();
+      this.rutaActual = this.$route.name;
     },
     nombreRuta(ruta) {
-      this.rutaActual = ruta.toUpperCase();
+      this.rutaActual = ruta;
     }
   }
 };

@@ -18,6 +18,8 @@ export default {
   beforeCreated() {},
   data() {
     return {
+      //Se puede realizar un fetch, y así obtener los datos de una base de datos
+      //Que de acuerdo a la ruta, enviará un dato específico.
       parametros: [
         "Almacenamiento",
         "Banda Ancha",

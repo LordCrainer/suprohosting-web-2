@@ -33,39 +33,41 @@
               :key="ind_valor"
               style="min-width:300px;"
             >
-              <v-container>
-                <v-layout align-center justify-center row fill-height>
-                  <v-card
-                    height="270"
-                    width="270"
-                    style="min-width:250px; border-radius: 10%"
-                    class="black--text"
-                    color="rgba(255,255,255,0.9)"
-                    hover
-                  >
-                    <v-hover>
-                      <v-avatar
-                        transition="slide-y-reverse-transition"
-                        slot-scope="{
-                          hover
-                        }"
-                        :class="`elevation-${hover ? 10 : 2}`"
-                        size="100"
-                      >
-                        <img :src="valor.src_avatar" alt="avatar" @click="" />
-                      </v-avatar>
-                    </v-hover>
-                    <v-card-text class="title">
-                      {{ valor.titulo }}
-                    </v-card-text>
+              <div data-aos="fade-up">
+                <v-container>
+                  <v-layout align-center justify-center row fill-height>
+                    <v-card
+                      height="280"
+                      width="280"
+                      style="min-width:250px; border-radius: 10%"
+                      class="black--text"
+                      color="rgba(255,255,255,0.9)"
+                      hover
+                    >
+                      <v-hover>
+                        <v-avatar
+                          transition="slide-y-reverse-transition"
+                          slot-scope="{
+                            hover
+                          }"
+                          :class="`elevation-${hover ? 10 : 2}`"
+                          size="100"
+                        >
+                          <img :src="valor.src_avatar" alt="avatar" @click="" />
+                        </v-avatar>
+                      </v-hover>
+                      <v-card-text class="title">
+                        {{ valor.titulo }}
+                      </v-card-text>
 
-                    <v-divider></v-divider>
-                    <v-card-title class="subheading">
-                      {{ valor.text }}
-                    </v-card-title>
-                  </v-card>
-                </v-layout>
-              </v-container>
+                      <v-divider></v-divider>
+                      <v-card-title class="subheading">
+                        {{ valor.text }}
+                      </v-card-title>
+                    </v-card>
+                  </v-layout>
+                </v-container>
+              </div>
             </v-flex>
           </v-layout>
         </v-container>

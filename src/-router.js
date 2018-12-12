@@ -5,10 +5,13 @@ import Router from "vue-router";
 
 import Header from "./componentes/header.vue";
 import Footer from "./componentes/footer.vue";*/
+import Error404 from "./componentes/error404.vue";
+import Parallax from "./componentes/UI/parallax.vue";
 import Pagina_Inicio from "./componentes/Inicio/inicio.vue";
 import Carousel from "./componentes/Inicio/carusel.vue";
 import Hosting from "./componentes/Hosting/hostings.vue";
 import Contact from "./componentes/Contact/contact.vue";
+
 Vue.use(Router);
 
 export default new Router({
@@ -18,7 +21,7 @@ export default new Router({
   },
   routes: [
     {
-      name: "home",
+      name: "INICIO",
       path: "/",
       components: {
         default: Pagina_Inicio,
@@ -26,16 +29,38 @@ export default new Router({
       }
     },
     {
-      name: "hosting",
+      name: "HOSTING",
       path: "/hosting",
       components: { default: Hosting }
     },
     {
-      name: "Contacto",
+      name: "HOSTING STARTER",
+      path: "/hosting/hosting_starter",
+      component: Parallax
+    },
+    {
+      name: "HOSTING ENTERPRISE",
+      path: "/hosting/hosting_enterprise",
+      component: Parallax
+    },
+    {
+      name: "CONTACTO",
       path: "/contacto",
       components: {
         default: Contact
-      }
+      },
+      children: [
+        {
+          name: "STARTER",
+          path: "1234",
+          component: Contact
+        }
+      ]
+    },
+    {
+      name: "ERROR404",
+      path: "*",
+      components: { default: Error404 }
     }
   ]
 });

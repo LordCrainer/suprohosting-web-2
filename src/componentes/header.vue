@@ -40,8 +40,8 @@ div {
       class="elevation-8"
       :color="color_toolbar"
     >
-      <v-toolbar-side-icon flat dark :ripple="false">
-        <v-avatar color="transparent" size="65">
+      <v-toolbar-side-icon fab flat dark :ripple="false">
+        <v-avatar color="color_toolbar" size="65">
           <img :src="src_logo" alt="alt" /> </v-avatar
       ></v-toolbar-side-icon>
       <v-spacer></v-spacer>

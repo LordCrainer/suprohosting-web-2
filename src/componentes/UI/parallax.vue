@@ -1,6 +1,6 @@
 <template>
   <v-parallax
-    src="https://www.blockchaintechnology-news.com/wp-content/uploads/2018/11/iStock-944923496.jpg"
+    src="https://www.novasaludsa.cl/wp-content/uploads/2017/10/Abstract-Background-White.jpg"
     height="350"
   >
     <v-layout align-center justify-center>
